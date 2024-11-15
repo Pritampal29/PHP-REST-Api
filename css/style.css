@@ -1,0 +1,15 @@
+.form-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+.dashboard-table th, .dashboard-table td {
+    vertical-align: middle;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+}
+.search-container label {
+    margin-right: 10px;
+}

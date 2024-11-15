@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>PHP REST API Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container my-2">
+        <!-- Title and Search Section -->
+        <div class="row mb-3 align-items-center">
+            <div class="col-md-6 bg-dark text-white rounded">
+                <h1>PHP REST API Dashboard</h1>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4 text-end">
+                <div class="search-container">
+                    <label for="searchInput" class="form-label mb-0">Search:</label>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search by Name or City" aria-label="Search">
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Insert Form -->
+        <form id="insertForm">
+            <div class="row form-section mb-4">
+                <div class="col-md-3">
+                    <input id="uName" type="text" name="uname" class="form-control" placeholder="Name" aria-label="Name">
+                </div>
+                <div class="col-md-3">
+                    <input id="uMobile" type="text" name="umobile" class="form-control" placeholder="Mobile" aria-label="Mobile">
+                </div>
+                <div class="col-md-2">
+                    <input id="uAge" type="number" name="uage" class="form-control" placeholder="Age" aria-label="Age">
+                </div>
+                <div class="col-md-2">
+                    <input id="uCity" type="text" name="ucity" class="form-control" placeholder="City" aria-label="City">
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-primary w-100" id="AddData" value="Add Data">
+                </div>
+            </div>
+        </form>
+
+        <!-- Dashboard Table -->
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped table-hover dashboard-table">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">City</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="loadTable"></tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/ajax.js"></script>
+</body>
+</html>
