@@ -22,7 +22,7 @@ if(mysqli_num_rows($query) > 0) {
 
 } else {
 
-    echo json_encode(array('Message' => 'No Record Found with this SearchTerm'));
+    echo json_encode(array('Message' => 'No Record Found with this SearchTerm', 'status' => false));
 
 }
 
