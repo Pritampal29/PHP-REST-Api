@@ -138,14 +138,13 @@ $(document).ready(function(){
 
             var obj = { search: searchData};
             var jsonData = JSON.stringify(obj);
-            // console.log(searchData);
-            // console.log(jsonData);
+           
+            $('#loadTable').html("");
             $.ajax({
                 url: 'http://localhost/php_api/search.php',
                 type: 'POST',
                 data: jsonData,
-                success: function(response){
-                    $('#loadTable').html("");
+                success: function(response){
                     $.each(response, function(key,value){
                         $('#loadTable').append("<tr>"
                             +"<td>"+ value.id +"</td>"
