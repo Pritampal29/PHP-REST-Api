@@ -12,7 +12,7 @@ include('config.php');
 $data = json_decode(file_get_contents("php://input"), true);
 $search_term = $data['search'];
 
-$select = "SELECT * FROM `php_api` WHERE `uname` LIKE '%$search_term%' ";
+$select = "SELECT * FROM `php_api` WHERE `uname` LIKE '%$search_term%' ORDER BY `id` DESC";
 $query = mysqli_query($conn,$select);
 
 if(mysqli_num_rows($query) > 0) {

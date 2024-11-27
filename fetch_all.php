@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 
 include('config.php');
 
-$select = "SELECT * FROM `php_api`";
+$select = "SELECT * FROM `php_api` ORDER BY `id` DESC";
 $query = mysqli_query($conn,$select);
 
 if(mysqli_num_rows($query) > 0) {
