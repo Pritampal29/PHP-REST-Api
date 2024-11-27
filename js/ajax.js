@@ -138,23 +138,27 @@ $(document).ready(function(){
 
             var obj = { search: searchData};
             var jsonData = JSON.stringify(obj);
-           
             $('#loadTable').html("");
             $.ajax({
                 url: 'http://localhost/php_api/search.php',
                 type: 'POST',
                 data: jsonData,
-                success: function(response){
-                    $.each(response, function(key,value){
-                        $('#loadTable').append("<tr>"
-                            +"<td>"+ value.id +"</td>"
-                            +"<td>"+ value.uname +"</td>"
-                            +"<td>"+ value.mobile +"</td>"
-                            +"<td>"+ value.age +"</td>"
-                            +"<td>"+ value.city +"</td>"
-                            +"<td class='text-center'><button id='editBtn' data-bs-toggle='modal' data-bs-target='#exampleModal' data-eid='"+value.id+"' class='btn btn-sm btn-success mx-1'>Edit</button> <button id='dltBtn' data-did='"+value.id+"' class='btn btn-sm btn-danger mx-1'>Delete</button></td>"+
-                            "</tr>");
-                    });
+                success: function(response){
+                    
+                    if(response.status == false){
+                        $('#loadTable').append("<tr><td colspan='6'>"+ response.Message +"</td></tr>");
+                    }else{
+                        $.each(response, function(key,value){
+                            $('#loadTable').append("<tr>"
+                                +"<td>"+ value.id +"</td>"
+                                +"<td>"+ value.uname +"</td>"
+                                +"<td>"+ value.mobile +"</td>"
+                                +"<td>"+ value.age +"</td>"
+                                +"<td>"+ value.city +"</td>"
+                                +"<td class='text-center'><button id='editBtn' data-bs-toggle='modal' data-bs-target='#exampleModal' data-eid='"+value.id+"' class='btn btn-sm btn-success mx-1'>Edit</button> <button id='dltBtn' data-did='"+value.id+"' class='btn btn-sm btn-danger mx-1'>Delete</button></td>"+
+                                "</tr>");
+                        });
+                    }
                 }
             });
         });
